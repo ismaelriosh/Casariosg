@@ -43,6 +43,10 @@ body {
     text-align: center;
     margin-bottom: var(--default-padding);
     font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .section-title-small {
@@ -70,6 +74,10 @@ p, li {
     color: var(--primary-brand-color);
     text-align: center;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* ------------------- */
@@ -151,12 +159,7 @@ i.ri-xl, i.ri-lg, i.ri-md, i.ri-sm, i.ri-xs {
 }
 
 .header-logo-top {
-    width: 200px;
-    height: auto;
-    display: block;
-    margin: 0;
-    fill: var(--white-color);
-    color: var(--white-color);
+    display: none; /* Ocultamos el logo superior para que no aparezca */
 }
 
 .main-nav .nav-link {
@@ -187,6 +190,16 @@ i.ri-xl, i.ri-lg, i.ri-md, i.ri-sm, i.ri-xs {
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--white-color);
+}
+
+.header-logo-bottom {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-top: 2rem;
+    fill: var(--white-color);
+    color: var(--white-color);
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
 }
 
 /* ============================================================= */
@@ -471,5 +484,58 @@ footer {
     }
     .hamburger-menu {
         display: block;
+    }
+}
+
+/* ============================================================= */
+/* Botón de Chatbot Flotante */
+/* ============================================================= */
+.chatbot-floating-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #25D366; /* Verde de WhatsApp */
+    color: var(--white-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.chatbot-floating-button:hover {
+    transform: scale(1.1);
+}
+
+.chatbot-floating-button i {
+    font-size: 2rem;
+    color: var(--white-color);
+}
+
+/* Nuevo estilo para el logo en la parte inferior del hero */
+.header-logo-bottom {
+    width: 200px;
+    height: auto;
+    margin-top: 2rem;
+    fill: var(--white-color);
+    color: var(--white-color);
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+/* Ocultar el logo superior para evitar duplicados */
+.header-logo-top {
+    display: none;
+}
+
+/* Ajuste para que el logo inferior sea más pequeño en móviles */
+@media (max-width: 767px) {
+    .header-logo-bottom {
+        width: 150px;
+        margin-top: 1rem;
     }
 }
